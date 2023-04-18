@@ -15,5 +15,13 @@ final class UnicodeScalarTests: XCTestCase {
 
 		XCTAssertEqual(sut, "🎉")
 	}
-	
+
+	func test_conversion_fromStringUInt32() {
+		let emojiString = "1F1E8"
+		let sut = UInt32(emojiString, radix: 16)
+
+		XCTAssertNotNil(sut)
+		XCTAssertEqual(sut, 127464)
+	}
+
 }
