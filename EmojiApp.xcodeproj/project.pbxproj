@@ -11,7 +11,7 @@
 		C63B66F929EBFF84007A9C85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B66F829EBFF84007A9C85 /* ContentView.swift */; };
 		C63B66FB29EBFF85007A9C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63B66FA29EBFF85007A9C85 /* Assets.xcassets */; };
 		C63B66FF29EBFF85007A9C85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63B66FE29EBFF85007A9C85 /* Preview Assets.xcassets */; };
-		C63B670C29EBFF96007A9C85 /* EmojiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B670B29EBFF96007A9C85 /* EmojiAppTests.swift */; };
+		C63B670C29EBFF96007A9C85 /* UnicodeScalarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,7 +32,7 @@
 		C63B66FC29EBFF85007A9C85 /* EmojiApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiApp.entitlements; sourceTree = "<group>"; };
 		C63B66FE29EBFF85007A9C85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C63B670929EBFF96007A9C85 /* EmojiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C63B670B29EBFF96007A9C85 /* EmojiAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAppTests.swift; sourceTree = "<group>"; };
+		C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeScalarTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +94,7 @@
 		C63B670A29EBFF96007A9C85 /* EmojiAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				C63B670B29EBFF96007A9C85 /* EmojiAppTests.swift */,
+				C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */,
 			);
 			path = EmojiAppTests;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C63B670C29EBFF96007A9C85 /* EmojiAppTests.swift in Sources */,
+				C63B670C29EBFF96007A9C85 /* UnicodeScalarTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
