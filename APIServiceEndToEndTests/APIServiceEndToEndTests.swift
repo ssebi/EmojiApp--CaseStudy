@@ -1,6 +1,6 @@
 //
 //  APIServiceEndToEndTests.swift
-//  EmojiAppTests
+//  APIServiceEndToEndTests
 //
 //  Created by Sebastian Vidrea on 18.04.2023.
 //
