@@ -9,6 +9,11 @@ import XCTest
 
 final class UnicodeScalarTests: XCTestCase {
 
+	func test_conversion_fromUIntToString() {
+		let codepoint: UInt32 = 127881
+		let sut = Unicode.Scalar(codepoint)
 
-
+		XCTAssertEqual(sut, "🎉")
+	}
+	
 }
