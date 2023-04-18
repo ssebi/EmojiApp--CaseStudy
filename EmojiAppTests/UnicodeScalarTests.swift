@@ -24,4 +24,14 @@ final class UnicodeScalarTests: XCTestCase {
 		XCTAssertEqual(sut, 127464)
 	}
 
+	func test_conversion_fromStringArrayToUnicodeScalar() {
+		let sut = ["1F1E8", "1F1EB"]
+			.compactMap { UInt32($0, radix: 16) }
+			.compactMap(UnicodeScalar.init)
+			.map(String.init)
+			.joined()
+
+		XCTAssertEqual(sut, "🇨🇫")
+	}
+
 }
