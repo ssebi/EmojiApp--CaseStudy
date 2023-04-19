@@ -6,17 +6,7 @@
 //
 
 import XCTest
-
-enum RandomEmojiEndpoint {
-	case get
-
-	func url(baseURL: URL) -> URL {
-		switch self {
-			case .get:
-				return baseURL.appending(path: "api/random")
-		}
-	}
-}
+import EmojiApp
 
 final class RandomEmojiEndpointTests: XCTestCase {
 
