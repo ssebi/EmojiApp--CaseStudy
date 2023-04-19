@@ -1,5 +1,5 @@
 //
-//  EmojiEndpointTests.swift
+//  RandomEmojiEndpointTests.swift
 //  EmojiAppTests
 //
 //  Created by Sebastian Vidrea on 19.04.2023.
@@ -18,7 +18,7 @@ enum RandomEmojiEndpoint {
 	}
 }
 
-final class EmojiEndpointTests: XCTestCase {
+final class RandomEmojiEndpointTests: XCTestCase {
 
 	func test_randomEmoji_endpointURL() {
 		let baseURL = URL(string: "http://base-url.com")!
