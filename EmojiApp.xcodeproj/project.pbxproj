@@ -13,6 +13,7 @@
 		84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */; };
 		84ECB56129F00C4E009CC648 /* RandomEmojiEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB56029F00C4E009CC648 /* RandomEmojiEndpointTests.swift */; };
 		84ECB56529F00DD6009CC648 /* RandomEmojiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB56429F00DD6009CC648 /* RandomEmojiEndpoint.swift */; };
+		84ECB56729F00E48009CC648 /* RandomEmojiMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB56629F00E48009CC648 /* RandomEmojiMapperTests.swift */; };
 		C63B66F729EBFF84007A9C85 /* EmojiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */; };
 		C63B66F929EBFF84007A9C85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B66F829EBFF84007A9C85 /* ContentView.swift */; };
 		C63B66FB29EBFF85007A9C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63B66FA29EBFF85007A9C85 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIService.swift; sourceTree = "<group>"; };
 		84ECB56029F00C4E009CC648 /* RandomEmojiEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiEndpointTests.swift; sourceTree = "<group>"; };
 		84ECB56429F00DD6009CC648 /* RandomEmojiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiEndpoint.swift; sourceTree = "<group>"; };
+		84ECB56629F00E48009CC648 /* RandomEmojiMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiMapperTests.swift; sourceTree = "<group>"; };
 		C63B66F329EBFF84007A9C85 /* EmojiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAppApp.swift; sourceTree = "<group>"; };
 		C63B66F829EBFF84007A9C85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			children = (
 				C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */,
 				84ECB56029F00C4E009CC648 /* RandomEmojiEndpointTests.swift */,
+				84ECB56629F00E48009CC648 /* RandomEmojiMapperTests.swift */,
 			);
 			path = EmojiAppTests;
 			sourceTree = "<group>";
@@ -334,6 +337,7 @@
 			files = (
 				C63B670C29EBFF96007A9C85 /* UnicodeScalarTests.swift in Sources */,
 				84ECB56129F00C4E009CC648 /* RandomEmojiEndpointTests.swift in Sources */,
+				84ECB56729F00E48009CC648 /* RandomEmojiMapperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
