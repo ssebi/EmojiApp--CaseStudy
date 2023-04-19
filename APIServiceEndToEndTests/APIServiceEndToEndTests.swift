@@ -34,7 +34,7 @@ final class APIService {
 final class APIServiceEndToEndTests: XCTestCase {
 
 	func test_getResponse_deliversErrorOnInvalidURL() async {
-		let sut = APIService(session: .init(configuration: .ephemeral))
+		let sut = makeSUT()
 		let someInvalidURL = URL(string: "some-invalid-url")!
 
 		do {
@@ -47,7 +47,7 @@ final class APIServiceEndToEndTests: XCTestCase {
 	}
 
 	func test_getResponse_deliversDataOnValidURL() async throws {
-		let sut = APIService(session: .init(configuration: .ephemeral))
+		let sut = makeSUT()
 		let someInvalidURL = URL(string: "https://google.com")!
 
 		let receivedDataResponse = try await sut.getResponse(for: someInvalidURL).data
@@ -56,12 +56,17 @@ final class APIServiceEndToEndTests: XCTestCase {
 	}
 
 	func test_getResponse_deliversValidHTTPURLReponseOnValidURL() async throws {
-		let sut = APIService(session: .init(configuration: .ephemeral))
+		let sut = makeSUT()
 		let someInvalidURL = URL(string: "https://google.com")!
 
 		let receivedHTTPURLResponse = try await sut.getResponse(for: someInvalidURL).httpURLResponse
 
 		XCTAssertEqual(receivedHTTPURLResponse.statusCode, 200)
+	}
+
+	// MARK: - Helpers
+	private func makeSUT() -> APIService {
+		APIService(session: .init(configuration: .ephemeral))
 	}
 
 }
