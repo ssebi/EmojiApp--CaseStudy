@@ -6,34 +6,7 @@
 //
 
 import XCTest
-
-protocol APIService {
-	func getResponse(for url: URL) async throws -> (data: Data, httpURLResponse: HTTPURLResponse)
-}
-
-final class URLSessionAPIService: APIService {
-	enum APIServiceError: Error {
-		case nonHTTPURLResponse
-	}
-
-	private let session: URLSession
-
-	init(session: URLSession = .shared) {
-		self.session = session
-	}
-
-	func getResponse(for url: URL) async throws -> (data: Data, httpURLResponse: HTTPURLResponse) {
-		let response = try await URLSession(configuration: .default).data(from: url)
-		guard let httpURLResponse = response.1 as? HTTPURLResponse else {
-			throw APIServiceError.nonHTTPURLResponse
-		}
-
-		return (
-			response.0,
-			httpURLResponse
-		)
-	}
-}
+import EmojiApp
 
 final class APIServiceEndToEndTests: XCTestCase {
 
@@ -70,7 +43,7 @@ final class APIServiceEndToEndTests: XCTestCase {
 
 	// MARK: - Helpers
 	private func makeSUT() -> APIService {
-		URLSessionAPIService(session: .init(configuration: .ephemeral))
+		URLSessionAPIService()
 	}
 
 }

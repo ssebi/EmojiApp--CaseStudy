@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		84ECB52929EECBA4009CC648 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB52829EECBA4009CC648 /* Emoji.swift */; };
 		84ECB53629EED094009CC648 /* APIServiceEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53529EED094009CC648 /* APIServiceEndToEndTests.swift */; };
+		84ECB53E29F001BC009CC648 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53D29F001BC009CC648 /* APIService.swift */; };
+		84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */; };
 		C63B66F729EBFF84007A9C85 /* EmojiAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */; };
 		C63B66F929EBFF84007A9C85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B66F829EBFF84007A9C85 /* ContentView.swift */; };
 		C63B66FB29EBFF85007A9C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63B66FA29EBFF85007A9C85 /* Assets.xcassets */; };
@@ -37,6 +39,8 @@
 		84ECB52829EECBA4009CC648 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		84ECB53329EED094009CC648 /* APIServiceEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIServiceEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ECB53529EED094009CC648 /* APIServiceEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceEndToEndTests.swift; sourceTree = "<group>"; };
+		84ECB53D29F001BC009CC648 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIService.swift; sourceTree = "<group>"; };
 		C63B66F329EBFF84007A9C85 /* EmojiApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmojiApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAppApp.swift; sourceTree = "<group>"; };
 		C63B66F829EBFF84007A9C85 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -88,6 +92,23 @@
 			path = APIServiceEndToEndTests;
 			sourceTree = "<group>";
 		};
+		84ECB53C29F001B1009CC648 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				84ECB53D29F001BC009CC648 /* APIService.swift */,
+				84ECB54129F002D5009CC648 /* Infrastructure */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		84ECB54129F002D5009CC648 /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
 		C63B66EA29EBFF84007A9C85 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +132,7 @@
 		C63B66F529EBFF84007A9C85 /* EmojiApp */ = {
 			isa = PBXGroup;
 			children = (
+				84ECB53C29F001B1009CC648 /* APIService */,
 				84ECB52729EECB6E009CC648 /* Models */,
 				C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */,
 				C63B66F829EBFF84007A9C85 /* ContentView.swift */,
@@ -205,6 +227,7 @@
 				TargetAttributes = {
 					84ECB53229EED094009CC648 = {
 						CreatedOnToolsVersion = 14.2;
+						TestTargetID = C63B66F229EBFF84007A9C85;
 					};
 					C63B66F229EBFF84007A9C85 = {
 						CreatedOnToolsVersion = 14.2;
@@ -275,6 +298,8 @@
 			files = (
 				84ECB52929EECBA4009CC648 /* Emoji.swift in Sources */,
 				C63B66F929EBFF84007A9C85 /* ContentView.swift in Sources */,
+				84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */,
+				84ECB53E29F001BC009CC648 /* APIService.swift in Sources */,
 				C63B66F729EBFF84007A9C85 /* EmojiAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +331,7 @@
 		84ECB53A29EED094009CC648 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C9XPG6AEKY;
@@ -314,16 +340,18 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theappcompany.APIServiceEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EmojiApp";
 			};
 			name = Debug;
 		};
 		84ECB53B29EED094009CC648 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = C9XPG6AEKY;
@@ -332,10 +360,11 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.theappcompany.APIServiceEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos;
+				SDKROOT = macosx;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/EmojiApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/EmojiApp";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
