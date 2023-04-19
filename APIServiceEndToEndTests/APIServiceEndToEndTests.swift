@@ -8,15 +8,26 @@
 import XCTest
 
 final class APIService {
+	enum APIServiceError: Error {
+		case nonHTTPURLResponse
+	}
+
 	private let session: URLSession
 
 	init(session: URLSession = .shared) {
 		self.session = session
 	}
 
-	func getResponse(for url: URL) async throws -> (Data, URLResponse) {
-		try await URLSession(configuration: .default)
-			.data(from: url)
+	func getResponse(for url: URL) async throws -> (data: Data, httpURLResponse: HTTPURLResponse) {
+		let response = try await URLSession(configuration: .default).data(from: url)
+		guard let httpURLResponse = response.1 as? HTTPURLResponse else {
+			throw APIServiceError.nonHTTPURLResponse
+		}
+
+		return (
+			response.0,
+			httpURLResponse
+		)
 	}
 }
 
@@ -34,5 +45,15 @@ final class APIServiceEndToEndTests: XCTestCase {
 			XCTAssertEqual(receivedError.code, -1002)
 		}
 	}
+
+	func test_getResponse_deliversDataOnValidURL() async throws {
+		let sut = APIService(session: .init(configuration: .ephemeral))
+		let someInvalidURL = URL(string: "https://google.com")!
+
+		let receivedDataResponse = try await sut.getResponse(for: someInvalidURL).data
+
+		XCTAssertEqual(receivedDataResponse.isEmpty, false)
+	}
+
 
 }
