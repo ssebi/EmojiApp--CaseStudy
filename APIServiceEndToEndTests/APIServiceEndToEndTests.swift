@@ -55,5 +55,13 @@ final class APIServiceEndToEndTests: XCTestCase {
 		XCTAssertEqual(receivedDataResponse.isEmpty, false)
 	}
 
+	func test_getResponse_deliversValidHTTPURLReponseOnValidURL() async throws {
+		let sut = APIService(session: .init(configuration: .ephemeral))
+		let someInvalidURL = URL(string: "https://google.com")!
+
+		let receivedHTTPURLResponse = try await sut.getResponse(for: someInvalidURL).httpURLResponse
+
+		XCTAssertEqual(receivedHTTPURLResponse.statusCode, 200)
+	}
 
 }
