@@ -7,7 +7,11 @@
 
 import XCTest
 
-final class APIService {
+protocol APIService {
+	func getResponse(for url: URL) async throws -> (data: Data, httpURLResponse: HTTPURLResponse)
+}
+
+final class URLSessionAPIService: APIService {
 	enum APIServiceError: Error {
 		case nonHTTPURLResponse
 	}
@@ -66,7 +70,7 @@ final class APIServiceEndToEndTests: XCTestCase {
 
 	// MARK: - Helpers
 	private func makeSUT() -> APIService {
-		APIService(session: .init(configuration: .ephemeral))
+		URLSessionAPIService(session: .init(configuration: .ephemeral))
 	}
 
 }
