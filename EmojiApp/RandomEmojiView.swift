@@ -19,6 +19,9 @@ struct RandomEmojiView: View {
 			Text(emoji)
 		} else {
 			ProgressView()
+				.task {
+					await viewModel.getRandomEmoji()
+				}
 		}
 	}
 }

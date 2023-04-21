@@ -16,19 +16,19 @@ final class RandomEmojiViewModelTests: XCTestCase {
 		XCTAssertEqual(spy.callCount, 0)
 	}
 
-	func test_getRandomEmoji_callsClosure() {
+	func test_getRandomEmoji_callsClosure() async {
 		let (sut, spy) = makeSUT()
 
-		sut.getRandomEmoji()
+		await sut.getRandomEmoji()
 
 		XCTAssertEqual(spy.callCount, 1)
 	}
 
-	func test_getRandomEmoji_setsLocalVariable() {
+	func test_getRandomEmoji_setsLocalVariable() async {
 		let expectedEmoji = "✨"
 		let (sut, _) = makeSUT(emoji: expectedEmoji)
 
-		sut.getRandomEmoji()
+		await sut.getRandomEmoji()
 
 		XCTAssertEqual(sut.emoji, expectedEmoji)
 	}
