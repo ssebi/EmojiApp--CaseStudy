@@ -6,15 +6,34 @@
 //
 
 import XCTest
+import EmojiApp
 
 final class EmojiViewModel {
+	private let getEmoji: () -> String
 
+	init(getEmoji: @escaping () -> String) {
+		self.getEmoji = getEmoji
+	}
 }
 
 final class EmojiViewModelTests: XCTestCase {
 
-	func test_init() {
-		let _ = EmojiViewModel()
+	func test_init_doesNotSendAnyMessages() {
+		let spy = GetEmojiSpy()
+		let _ = EmojiViewModel(getEmoji: spy.getEmoji)
+
+		XCTAssertEqual(spy.callCount, 0)
 	}
 
+}
+
+// MARK: - Helpers
+
+final class GetEmojiSpy {
+	private(set) var callCount: Int = 0
+
+	func getEmoji() -> String {
+		callCount += 1
+		return "✨"
+	}
 }
