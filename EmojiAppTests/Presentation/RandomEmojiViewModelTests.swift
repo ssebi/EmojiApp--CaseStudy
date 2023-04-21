@@ -8,20 +8,6 @@
 import XCTest
 import EmojiApp
 
-final class RandomEmojiViewModel {
-	@Published private(set) var emoji: String?
-
-	private let randomEmojiProvider: () -> String?
-
-	init(randomEmojiProvider: @escaping () -> String?) {
-		self.randomEmojiProvider = randomEmojiProvider
-	}
-
-	func getRandomEmoji() {
-		emoji = randomEmojiProvider()
-	}
-}
-
 final class RandomEmojiViewModelTests: XCTestCase {
 
 	func test_init_doesNotSendAnyMessages() {
