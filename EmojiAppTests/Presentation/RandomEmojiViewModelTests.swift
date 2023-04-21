@@ -1,5 +1,5 @@
 //
-//  EmojiViewModelTests.swift
+//  RandomEmojiViewModelTests.swift
 //  EmojiAppTests
 //
 //  Created by Sebastian Vidrea on 21.04.2023.
@@ -8,7 +8,7 @@
 import XCTest
 import EmojiApp
 
-final class EmojiViewModel {
+final class RandomEmojiViewModel {
 	@Published private(set) var emoji: String?
 
 	private let getEmoji: () -> String?
@@ -22,18 +22,18 @@ final class EmojiViewModel {
 	}
 }
 
-final class EmojiViewModelTests: XCTestCase {
+final class RandomEmojiViewModelTests: XCTestCase {
 
 	func test_init_doesNotSendAnyMessages() {
 		let spy = GetEmojiSpy()
-		let _ = EmojiViewModel(getEmoji: spy.getEmoji)
+		let _ = RandomEmojiViewModel(getEmoji: spy.getEmoji)
 
 		XCTAssertEqual(spy.callCount, 0)
 	}
 
 	func test_getRandomEmoji_callsClosure() {
 		let spy = GetEmojiSpy()
-		let sut = EmojiViewModel(getEmoji: spy.getEmoji)
+		let sut = RandomEmojiViewModel(getEmoji: spy.getEmoji)
 
 		sut.getRandomEmoji()
 
@@ -43,7 +43,7 @@ final class EmojiViewModelTests: XCTestCase {
 	func test_getRandomEmoji_setsLocalVariable() {
 		let spy = GetEmojiSpy()
 		let expectedEmoji = "✨"
-		let sut = EmojiViewModel(getEmoji: spy.getEmoji)
+		let sut = RandomEmojiViewModel(getEmoji: spy.getEmoji)
 
 		spy.completeWithEmoji(expectedEmoji)
 		sut.getRandomEmoji()
