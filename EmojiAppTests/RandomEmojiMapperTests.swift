@@ -9,12 +9,24 @@ import XCTest
 
 public enum MappingError: Error {
 	case invalidStatusCode
+	case invalidData
 }
 
 struct RandomEmojiMapper {
+	struct RemoteEmoji: Decodable {
+		let name: String
+		let category: String
+		let group: String
+		let value: String
+	}
+
 	static func map(_ data: Data, from response: HTTPURLResponse) throws {
 		guard response.statusCode == 200 else {
 			throw MappingError.invalidStatusCode
+		}
+
+		guard let _ = try? JSONDecoder().decode(RemoteEmoji.self, from: data) else {
+			throw MappingError.invalidData
 		}
 	}
 }
@@ -28,11 +40,24 @@ final class RandomEmojiMapperTests: XCTestCase {
 		
 		samples.forEach { code in
 			do {
-				let _ = try RandomEmojiMapper.map(data, from: HTTPURLResponse(statusCode: code))
+				try RandomEmojiMapper.map(data, from: HTTPURLResponse(statusCode: code))
 				XCTFail("Expected to throw error")
 			} catch let receivedError as NSError {
 				XCTAssertEqual(receivedError, MappingError.invalidStatusCode as NSError)
 			}
+		}
+	}
+
+	func test_map_throwsExpectedErrorOn200HTTPResponseWithInvalidJSON() {
+		let invalidJSON = Data("invalid json".utf8)
+
+		do {
+			try RandomEmojiMapper.map(invalidJSON, from: HTTPURLResponse(statusCode: 200))
+			XCTFail("Expected to throw error")
+		} catch let receivedError as MappingError {
+			XCTAssertEqual(receivedError, MappingError.invalidData)
+		} catch {
+			XCTFail("Expected to throw error of type MappingError")
 		}
 	}
 	
