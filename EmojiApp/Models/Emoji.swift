@@ -7,9 +7,16 @@
 
 import Foundation
 
-struct Emoji {
-	let name: String
-	let category: String
-	let group: String
-	let value: String
+public struct Emoji: Equatable {
+	public let name: String
+	public let category: String
+	public let group: String
+	public let value: String
+
+	public init(name: String, category: String, group: String, value: String) {
+		self.name = name
+		self.category = category
+		self.group = group
+		self.value = value
+	}
 }
