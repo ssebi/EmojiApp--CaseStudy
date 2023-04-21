@@ -6,17 +6,7 @@
 //
 
 import XCTest
-
-struct UnicodeMapper {
-	static func map(_ unicode: [String]) -> String {
-		unicode
-			.map { $0.replacing("U+", with: "") }
-			.compactMap { UInt32($0, radix: 16) }
-			.compactMap(UnicodeScalar.init)
-			.map(String.init)
-			.joined()
-	}
-}
+import EmojiApp
 
 final class UnicodeScalarTests: XCTestCase {
 
