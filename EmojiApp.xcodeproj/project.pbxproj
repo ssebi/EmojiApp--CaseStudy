@@ -94,6 +94,15 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
+		84DC8D7B29F29B600024C22A /* API */ = {
+			isa = PBXGroup;
+			children = (
+				84ECB56029F00C4E009CC648 /* RandomEmojiEndpointTests.swift */,
+				84ECB56629F00E48009CC648 /* RandomEmojiMapperTests.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		84ECB52729EECB6E009CC648 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,8 +201,7 @@
 			isa = PBXGroup;
 			children = (
 				C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */,
-				84ECB56029F00C4E009CC648 /* RandomEmojiEndpointTests.swift */,
-				84ECB56629F00E48009CC648 /* RandomEmojiMapperTests.swift */,
+				84DC8D7B29F29B600024C22A /* API */,
 			);
 			path = EmojiAppTests;
 			sourceTree = "<group>";
