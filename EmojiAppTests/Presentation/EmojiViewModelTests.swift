@@ -9,6 +9,8 @@ import XCTest
 import EmojiApp
 
 final class EmojiViewModel {
+	@Published private(set) var emoji: String?
+
 	private let getEmoji: () -> String
 
 	init(getEmoji: @escaping () -> String) {
@@ -16,7 +18,7 @@ final class EmojiViewModel {
 	}
 
 	func getRandomEmoji() {
-		_ = getEmoji()
+		emoji = getEmoji()
 	}
 }
 
@@ -38,6 +40,17 @@ final class EmojiViewModelTests: XCTestCase {
 		XCTAssertEqual(spy.callCount, 1)
 	}
 
+	func test_getRandomEmoji_setsLocalVariable() {
+		let spy = GetEmojiSpy()
+		let expectedEmoji = "✨"
+		let sut = EmojiViewModel(getEmoji: spy.getEmoji)
+
+		spy.completeWithEmoji(expectedEmoji)
+		sut.getRandomEmoji()
+
+		XCTAssertEqual(sut.emoji, expectedEmoji)
+	}
+
 }
 
 // MARK: - Helpers
@@ -45,8 +58,14 @@ final class EmojiViewModelTests: XCTestCase {
 final class GetEmojiSpy {
 	private(set) var callCount: Int = 0
 
+	private var emojiToCompleteWith: String?
+
 	func getEmoji() -> String {
 		callCount += 1
-		return "✨"
+		return emojiToCompleteWith ?? ""
+	}
+
+	func completeWithEmoji(_ emoji: String) {
+		emojiToCompleteWith = emoji
 	}
 }
