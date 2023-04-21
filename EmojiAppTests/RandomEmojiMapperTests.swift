@@ -42,8 +42,10 @@ final class RandomEmojiMapperTests: XCTestCase {
 			do {
 				try RandomEmojiMapper.map(data, from: HTTPURLResponse(statusCode: code))
 				XCTFail("Expected to throw error")
-			} catch let receivedError as NSError {
-				XCTAssertEqual(receivedError, MappingError.invalidStatusCode as NSError)
+			} catch let receivedError as MappingError {
+				XCTAssertEqual(receivedError, MappingError.invalidStatusCode)
+			} catch {
+				XCTFail("Expected to throw error of type MappingError")
 			}
 		}
 	}
