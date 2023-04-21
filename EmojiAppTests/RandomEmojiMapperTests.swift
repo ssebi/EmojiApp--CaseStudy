@@ -8,37 +8,6 @@
 import XCTest
 import EmojiApp
 
-public enum MappingError: Error {
-	case invalidStatusCode
-	case invalidData
-}
-
-struct RandomEmojiMapper {
-	private struct RemoteEmoji: Decodable {
-		let name: String
-		let category: String
-		let group: String
-		let unicode: [String]
-	}
-
-	static func map(_ data: Data, from response: HTTPURLResponse) throws -> Emoji {
-		guard response.statusCode == 200 else {
-			throw MappingError.invalidStatusCode
-		}
-
-		guard let remoteEmoji = try? JSONDecoder().decode(RemoteEmoji.self, from: data) else {
-			throw MappingError.invalidData
-		}
-
-		return Emoji(
-			name: remoteEmoji.name,
-			category: remoteEmoji.category,
-			group: remoteEmoji.group,
-			value: ""
-		)
-	}
-}
-
 final class RandomEmojiMapperTests: XCTestCase {
 	
 	func test_map_throwsExpectedErrorOnNon200HTTPResponse() {

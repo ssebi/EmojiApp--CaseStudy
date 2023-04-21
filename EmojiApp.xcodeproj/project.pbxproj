@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84DC8D7729F29A5E0024C22A /* RandomEmojiMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC8D7629F29A5E0024C22A /* RandomEmojiMapper.swift */; };
+		84DC8D7A29F29A830024C22A /* MappingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC8D7929F29A830024C22A /* MappingError.swift */; };
 		84ECB52929EECBA4009CC648 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB52829EECBA4009CC648 /* Emoji.swift */; };
 		84ECB53629EED094009CC648 /* APIServiceEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53529EED094009CC648 /* APIServiceEndToEndTests.swift */; };
 		84ECB53E29F001BC009CC648 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53D29F001BC009CC648 /* APIService.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84DC8D7629F29A5E0024C22A /* RandomEmojiMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiMapper.swift; sourceTree = "<group>"; };
+		84DC8D7929F29A830024C22A /* MappingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MappingError.swift; sourceTree = "<group>"; };
 		84ECB52829EECBA4009CC648 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
 		84ECB53329EED094009CC648 /* APIServiceEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIServiceEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84ECB53529EED094009CC648 /* APIServiceEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceEndToEndTests.swift; sourceTree = "<group>"; };
@@ -82,6 +86,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84DC8D7829F29A790024C22A /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				84DC8D7929F29A830024C22A /* MappingError.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		84ECB52729EECB6E009CC648 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -118,6 +130,7 @@
 		84ECB56229F00DC2009CC648 /* RandomEmojiFeature */ = {
 			isa = PBXGroup;
 			children = (
+				84DC8D7829F29A790024C22A /* Domain */,
 				84ECB56329F00DD0009CC648 /* API */,
 			);
 			path = RandomEmojiFeature;
@@ -127,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				84ECB56429F00DD6009CC648 /* RandomEmojiEndpoint.swift */,
+				84DC8D7629F29A5E0024C22A /* RandomEmojiMapper.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -325,8 +339,10 @@
 				84ECB56529F00DD6009CC648 /* RandomEmojiEndpoint.swift in Sources */,
 				84ECB52929EECBA4009CC648 /* Emoji.swift in Sources */,
 				C63B66F929EBFF84007A9C85 /* ContentView.swift in Sources */,
+				84DC8D7A29F29A830024C22A /* MappingError.swift in Sources */,
 				84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */,
 				84ECB53E29F001BC009CC648 /* APIService.swift in Sources */,
+				84DC8D7729F29A5E0024C22A /* RandomEmojiMapper.swift in Sources */,
 				C63B66F729EBFF84007A9C85 /* EmojiAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
