@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct EmojiAppApp: App {
+
     var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
+		WindowGroup {
+			RandomEmojiUIComposer.makeRandomEmoji(with: { nil })
+		}
     }
+
 }
