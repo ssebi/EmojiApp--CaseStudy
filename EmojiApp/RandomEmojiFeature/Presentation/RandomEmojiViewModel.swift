@@ -19,6 +19,7 @@ public final class RandomEmojiViewModel: ObservableObject {
 
 	public func getRandomEmoji() {
 		randomEmojiLoader()
+			.receive(on: DispatchQueue.main)
 			.assign(to: &$emoji)
 	}
 }

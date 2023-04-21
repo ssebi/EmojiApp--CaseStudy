@@ -11,11 +11,13 @@ import Combine
 @main
 struct EmojiAppApp: App {
 
+	private let dependencyContainer = DependencyContainer()
+
     var body: some Scene {
 		WindowGroup {
 			RandomEmojiUIComposer
 				.makeRandomEmoji(
-					with: { Just("✨").eraseToAnyPublisher() }
+					with: dependencyContainer.randomEmojiLoader
 				)
 		}
     }

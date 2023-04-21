@@ -26,6 +26,7 @@
 		C63B66FB29EBFF85007A9C85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63B66FA29EBFF85007A9C85 /* Assets.xcassets */; };
 		C63B66FF29EBFF85007A9C85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63B66FE29EBFF85007A9C85 /* Preview Assets.xcassets */; };
 		C63B670C29EBFF96007A9C85 /* UnicodeScalarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */; };
+		C68B1B8129F2E9A400FD8997 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 		C63B66FE29EBFF85007A9C85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C63B670929EBFF96007A9C85 /* EmojiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeScalarTests.swift; sourceTree = "<group>"; };
+		C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +211,7 @@
 				84ECB56229F00DC2009CC648 /* RandomEmojiFeature */,
 				84ECB53C29F001B1009CC648 /* APIService */,
 				C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */,
+				C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */,
 				C63B66F829EBFF84007A9C85 /* RandomEmojiView.swift */,
 				84FFDBE729F2B0B0004661E6 /* RandomEmojiUIComposer.swift */,
 				C63B66FA29EBFF85007A9C85 /* Assets.xcassets */,
@@ -385,6 +388,7 @@
 				84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */,
 				84ECB53E29F001BC009CC648 /* APIService.swift in Sources */,
 				84DC8D7729F29A5E0024C22A /* RandomEmojiMapper.swift in Sources */,
+				C68B1B8129F2E9A400FD8997 /* DependencyContainer.swift in Sources */,
 				C63B66F729EBFF84007A9C85 /* EmojiAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
