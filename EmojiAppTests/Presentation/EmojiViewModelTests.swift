@@ -14,6 +14,10 @@ final class EmojiViewModel {
 	init(getEmoji: @escaping () -> String) {
 		self.getEmoji = getEmoji
 	}
+
+	func getRandomEmoji() {
+		_ = getEmoji()
+	}
 }
 
 final class EmojiViewModelTests: XCTestCase {
@@ -23,6 +27,15 @@ final class EmojiViewModelTests: XCTestCase {
 		let _ = EmojiViewModel(getEmoji: spy.getEmoji)
 
 		XCTAssertEqual(spy.callCount, 0)
+	}
+
+	func test_getRandomEmoji_callsClosure() {
+		let spy = GetEmojiSpy()
+		let sut = EmojiViewModel(getEmoji: spy.getEmoji)
+
+		sut.getRandomEmoji()
+
+		XCTAssertEqual(spy.callCount, 1)
 	}
 
 }
