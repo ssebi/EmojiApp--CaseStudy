@@ -6,17 +6,19 @@
 //
 
 import Foundation
+import Combine
 
 public final class RandomEmojiViewModel: ObservableObject {
 	@Published public private(set) var emoji: String?
 
-	private let randomEmojiProvider: () async -> String?
+	private let randomEmojiProvider: () -> AnyPublisher<String?, Never>
 
-	public init(randomEmojiProvider: @escaping () async -> String?) {
+	public init(randomEmojiProvider: @escaping () -> AnyPublisher<String?, Never>) {
 		self.randomEmojiProvider = randomEmojiProvider
 	}
 
-	@MainActor public func getRandomEmoji() async {
-		emoji = await randomEmojiProvider()
+	public func getRandomEmoji() {
+		randomEmojiProvider()
+			.assign(to: &$emoji)
 	}
 }

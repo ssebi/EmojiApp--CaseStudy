@@ -6,13 +6,17 @@
 //
 
 import SwiftUI
+import Combine
 
 @main
 struct EmojiAppApp: App {
 
     var body: some Scene {
 		WindowGroup {
-			RandomEmojiUIComposer.makeRandomEmoji(with: { nil })
+			RandomEmojiUIComposer
+				.makeRandomEmoji(
+					with: { Just("✨").eraseToAnyPublisher() }
+				)
 		}
     }
 

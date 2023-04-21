@@ -7,11 +7,14 @@
 
 import Foundation
 import SwiftUI
+import Combine
 
 public struct RandomEmojiUIComposer {
 	private init() { }
 
-	public static func makeRandomEmoji(with randomEmojiProvider: @escaping () async -> String?) -> some View {
+	public static func makeRandomEmoji(
+		with randomEmojiProvider: @escaping () -> AnyPublisher<String?, Never>
+	) -> some View {
 		let viewModel = RandomEmojiViewModel(randomEmojiProvider: randomEmojiProvider)
 		return RandomEmojiView(viewModel: viewModel)
 	}

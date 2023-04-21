@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct RandomEmojiView: View {
 	@StateObject private var viewModel: RandomEmojiViewModel
@@ -19,17 +20,16 @@ struct RandomEmojiView: View {
 			Text(emoji)
 		} else {
 			ProgressView()
-				.task {
-					await viewModel.getRandomEmoji()
-				}
+				.onAppear(perform: viewModel.getRandomEmoji)
 		}
 	}
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-		RandomEmojiUIComposer.makeRandomEmoji(with: {
-			"✨"
-		})
+		RandomEmojiUIComposer
+			.makeRandomEmoji(
+				with: { Just("✨").eraseToAnyPublisher() }
+			)
     }
 }

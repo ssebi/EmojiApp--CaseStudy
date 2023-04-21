@@ -6,6 +6,7 @@
 //
 
 import XCTest
+import Combine
 import EmojiApp
 
 final class RandomEmojiViewModelTests: XCTestCase {
@@ -19,28 +20,25 @@ final class RandomEmojiViewModelTests: XCTestCase {
 	func test_getRandomEmoji_callsClosure() async {
 		let (sut, spy) = makeSUT()
 
-		await sut.getRandomEmoji()
+		sut.getRandomEmoji()
 
 		XCTAssertEqual(spy.callCount, 1)
 	}
 
 	func test_getRandomEmoji_setsLocalVariable() async {
 		let expectedEmoji = "✨"
-		let (sut, _) = makeSUT(emoji: expectedEmoji)
+		let (sut, spy) = makeSUT()
 
-		await sut.getRandomEmoji()
+		sut.getRandomEmoji()
+		spy.completeWithEmoji(expectedEmoji)
 
 		XCTAssertEqual(sut.emoji, expectedEmoji)
 	}
 
 	// MARK: - Helpers
-	private func makeSUT(emoji: String? = nil, line: UInt = #line) -> (RandomEmojiViewModel, GetRandomEmojiSpy) {
+	private func makeSUT(line: UInt = #line) -> (RandomEmojiViewModel, GetRandomEmojiSpy) {
 		let spy = GetRandomEmojiSpy()
-		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
-
-		if let emoji {
-			spy.completeWithEmoji(emoji)
-		}
+		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmojiPublisher)
 
 		trackForMemoryLeaks(sut, file: #filePath, line: line)
 		trackForMemoryLeaks(spy, file: #filePath, line: line)
@@ -53,16 +51,19 @@ final class RandomEmojiViewModelTests: XCTestCase {
 // MARK: - Helpers
 
 final class GetRandomEmojiSpy {
-	private(set) var callCount: Int = 0
-
-	private var emojiToCompleteWith: String?
-
-	func getEmoji() -> String? {
-		callCount += 1
-		return emojiToCompleteWith ?? nil
+	var callCount: Int {
+		requests.count
 	}
 
-	func completeWithEmoji(_ emoji: String) {
-		emojiToCompleteWith = emoji
+	private var requests: [PassthroughSubject<String?, Never>] = []
+
+	func getEmojiPublisher() -> AnyPublisher<String?, Never> {
+		let publisher = PassthroughSubject<String?, Never>()
+		requests.append(publisher)
+		return publisher.eraseToAnyPublisher()
+	}
+
+	func completeWithEmoji(_ emoji: String, at index: Int = 0) {
+		requests[index].send(emoji)
 	}
 }
