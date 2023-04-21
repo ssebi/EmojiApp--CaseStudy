@@ -15,6 +15,8 @@ public struct RandomEmojiMapper {
 		let unicode: [String]
 	}
 
+	private init() { }
+
 	public static func map(_ data: Data, from response: HTTPURLResponse) throws -> Emoji {
 		guard response.statusCode == 200 else {
 			throw MappingError.invalidStatusCode

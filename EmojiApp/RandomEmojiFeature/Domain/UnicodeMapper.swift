@@ -8,6 +8,8 @@
 import Foundation
 
 public struct UnicodeMapper {
+	private init() { }
+	
 	public static func map(_ unicode: [String]) -> String {
 		unicode
 			.map { $0.replacing("U+", with: "") }
