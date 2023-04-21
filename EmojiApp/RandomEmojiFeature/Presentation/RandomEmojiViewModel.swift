@@ -11,14 +11,14 @@ import Combine
 public final class RandomEmojiViewModel: ObservableObject {
 	@Published public private(set) var emoji: String?
 
-	private let randomEmojiProvider: () -> AnyPublisher<String?, Never>
+	private let randomEmojiLoader: () -> AnyPublisher<String?, Never>
 
-	public init(randomEmojiProvider: @escaping () -> AnyPublisher<String?, Never>) {
-		self.randomEmojiProvider = randomEmojiProvider
+	public init(randomEmojiLoader: @escaping () -> AnyPublisher<String?, Never>) {
+		self.randomEmojiLoader = randomEmojiLoader
 	}
 
 	public func getRandomEmoji() {
-		randomEmojiProvider()
+		randomEmojiLoader()
 			.assign(to: &$emoji)
 	}
 }

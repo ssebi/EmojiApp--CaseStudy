@@ -38,7 +38,7 @@ final class RandomEmojiViewModelTests: XCTestCase {
 	// MARK: - Helpers
 	private func makeSUT(line: UInt = #line) -> (RandomEmojiViewModel, GetRandomEmojiSpy) {
 		let spy = GetRandomEmojiSpy()
-		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmojiPublisher)
+		let sut = RandomEmojiViewModel(randomEmojiLoader: spy.getEmojiPublisher)
 
 		trackForMemoryLeaks(sut, file: #filePath, line: line)
 		trackForMemoryLeaks(spy, file: #filePath, line: line)
