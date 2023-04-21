@@ -28,7 +28,7 @@ public struct RandomEmojiMapper {
 			name: remoteEmoji.name,
 			category: remoteEmoji.category,
 			group: remoteEmoji.group,
-			value: ""
+			value: UnicodeMapper.map(remoteEmoji.unicode)
 		)
 	}
 }

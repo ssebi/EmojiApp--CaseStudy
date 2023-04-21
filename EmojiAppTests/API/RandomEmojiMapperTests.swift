@@ -64,7 +64,7 @@ final class RandomEmojiMapperTests: XCTestCase {
 			name: "hugging face",
 			category: "smileys and people",
 			group: "face positive",
-			value: ""
+			value: "🤗"
 		)
 		return (validJSON, emoji)
 	}
