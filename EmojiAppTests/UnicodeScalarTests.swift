@@ -35,13 +35,13 @@ final class UnicodeScalarTests: XCTestCase {
 		XCTAssertEqual(sut, 127464)
 	}
 
-	func test_conversion_fromStringArrayToUnicodeScalar() {
+	func test_map_fromStringArrayToUnicodeScalar() {
 		let sut = UnicodeMapper.map(["1F1E8", "1F1EB"])
 
 		XCTAssertEqual(sut, "🇨🇫")
 	}
 
-	func test_conversion_fromStringArrayWithPrefixToUnicodeScalar() {
+	func test_map_fromStringArrayWithPrefixToUnicodeScalar() {
 		let sut = UnicodeMapper.map(["U+1F1E8", "U+1F1EB"])
 
 		XCTAssertEqual(sut, "🇨🇫")
