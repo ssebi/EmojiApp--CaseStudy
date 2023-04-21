@@ -48,8 +48,8 @@ final class RandomEmojiViewModelTests: XCTestCase {
 	}
 
 	// MARK: - Helpers
-	private func makeSUT(emoji: String? = nil) -> (RandomEmojiViewModel, GetRndomEmojiSpy) {
-		let spy = GetRndomEmojiSpy()
+	private func makeSUT(emoji: String? = nil) -> (RandomEmojiViewModel, GetRandomEmojiSpy) {
+		let spy = GetRandomEmojiSpy()
 		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
 
 		if let emoji {
@@ -63,7 +63,7 @@ final class RandomEmojiViewModelTests: XCTestCase {
 
 // MARK: - Helpers
 
-final class GetRndomEmojiSpy {
+final class GetRandomEmojiSpy {
 	private(set) var callCount: Int = 0
 
 	private var emojiToCompleteWith: String?
