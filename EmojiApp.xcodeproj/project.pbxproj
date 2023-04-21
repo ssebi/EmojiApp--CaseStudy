@@ -162,10 +162,10 @@
 		84ECB56229F00DC2009CC648 /* RandomEmojiFeature */ = {
 			isa = PBXGroup;
 			children = (
-				84DC8D8129F2AA930024C22A /* Presentation */,
 				84DC8D7829F29A790024C22A /* Domain */,
 				84ECB52729EECB6E009CC648 /* Models */,
 				84ECB56329F00DD0009CC648 /* API */,
+				84DC8D8129F2AA930024C22A /* Presentation */,
 			);
 			path = RandomEmojiFeature;
 			sourceTree = "<group>";
