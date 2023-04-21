@@ -72,30 +72,37 @@ final class RandomEmojiMapperTests: XCTestCase {
 	}
 
 	func test_map_deliversEmojiOn200HTTPResponseWithValidJSON() throws {
-		let validJSON = Data("""
-		   {
-			"name": "hugging face",
-			"category": "smileys and people",
-			"group": "face positive",
-			"htmlCode": ["&#129303;"],
-			"unicode": ["U+1F917"]
-		  }
-		""".utf8)
-		let expectedResult = Emoji(
-				name: "hugging face",
-				category: "smileys and people",
-				group: "face positive",
-				value: ""
-			)
+		let (validJSON, expectedResult) = makeEmoji()
 
 		let receivedResult = try RandomEmojiMapper.map(validJSON, from: HTTPURLResponse(statusCode: 200))
 
 		XCTAssertEqual(receivedResult, expectedResult)
 	}
+
+	// MARK: - Helpers
+	private func makeEmoji() -> (data: Data, model: Emoji) {
+		let validJSON = Data(
+		"""
+			{
+			   "name": "hugging face",
+			   "category": "smileys and people",
+			   "group": "face positive",
+			   "htmlCode": ["&#129303;"],
+			   "unicode": ["U+1F917"]
+			}
+		""".utf8)
+		let emoji = Emoji(
+			name: "hugging face",
+			category: "smileys and people",
+			group: "face positive",
+			value: ""
+		)
+		return (validJSON, emoji)
+	}
 	
 }
 
-// MARK: - Helpers
+// MARK: - Test Helpers
 func anyURL() -> URL {
 	URL(string: "https://any-url.com")!
 }
