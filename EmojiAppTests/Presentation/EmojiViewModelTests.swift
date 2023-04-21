@@ -11,9 +11,9 @@ import EmojiApp
 final class EmojiViewModel {
 	@Published private(set) var emoji: String?
 
-	private let getEmoji: () -> String
+	private let getEmoji: () -> String?
 
-	init(getEmoji: @escaping () -> String) {
+	init(getEmoji: @escaping () -> String?) {
 		self.getEmoji = getEmoji
 	}
 
@@ -60,9 +60,9 @@ final class GetEmojiSpy {
 
 	private var emojiToCompleteWith: String?
 
-	func getEmoji() -> String {
+	func getEmoji() -> String? {
 		callCount += 1
-		return emojiToCompleteWith ?? ""
+		return emojiToCompleteWith ?? nil
 	}
 
 	func completeWithEmoji(_ emoji: String) {
