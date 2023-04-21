@@ -25,15 +25,13 @@ final class RandomEmojiViewModel {
 final class RandomEmojiViewModelTests: XCTestCase {
 
 	func test_init_doesNotSendAnyMessages() {
-		let spy = GetRndomEmojiSpy()
-		let _ = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
+		let (_, spy) = makeSUT()
 
 		XCTAssertEqual(spy.callCount, 0)
 	}
 
 	func test_getRandomEmoji_callsClosure() {
-		let spy = GetRndomEmojiSpy()
-		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
+		let (sut, spy) = makeSUT()
 
 		sut.getRandomEmoji()
 
@@ -41,14 +39,24 @@ final class RandomEmojiViewModelTests: XCTestCase {
 	}
 
 	func test_getRandomEmoji_setsLocalVariable() {
-		let spy = GetRndomEmojiSpy()
 		let expectedEmoji = "✨"
-		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
+		let (sut, _) = makeSUT(emoji: expectedEmoji)
 
-		spy.completeWithEmoji(expectedEmoji)
 		sut.getRandomEmoji()
 
 		XCTAssertEqual(sut.emoji, expectedEmoji)
+	}
+
+	// MARK: - Helpers
+	private func makeSUT(emoji: String? = nil) -> (RandomEmojiViewModel, GetRndomEmojiSpy) {
+		let spy = GetRndomEmojiSpy()
+		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
+
+		if let emoji {
+			spy.completeWithEmoji(emoji)
+		}
+
+		return (sut, spy)
 	}
 
 }
