@@ -7,6 +7,15 @@
 
 import XCTest
 
+struct UnicodeMapper {
+	static func map(_ unicode: [String]) -> String {
+		unicode.compactMap { UInt32($0, radix: 16) }
+			.compactMap(UnicodeScalar.init)
+			.map(String.init)
+			.joined()
+	}
+}
+
 final class UnicodeScalarTests: XCTestCase {
 
 	func test_conversion_fromUIntToString() {
@@ -25,11 +34,7 @@ final class UnicodeScalarTests: XCTestCase {
 	}
 
 	func test_conversion_fromStringArrayToUnicodeScalar() {
-		let sut = ["1F1E8", "1F1EB"]
-			.compactMap { UInt32($0, radix: 16) }
-			.compactMap(UnicodeScalar.init)
-			.map(String.init)
-			.joined()
+		let sut = UnicodeMapper.map(["1F1E8", "1F1EB"])
 
 		XCTAssertEqual(sut, "🇨🇫")
 	}
