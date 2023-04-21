@@ -11,29 +11,29 @@ import EmojiApp
 final class RandomEmojiViewModel {
 	@Published private(set) var emoji: String?
 
-	private let getEmoji: () -> String?
+	private let randomEmojiProvider: () -> String?
 
-	init(getEmoji: @escaping () -> String?) {
-		self.getEmoji = getEmoji
+	init(randomEmojiProvider: @escaping () -> String?) {
+		self.randomEmojiProvider = randomEmojiProvider
 	}
 
 	func getRandomEmoji() {
-		emoji = getEmoji()
+		emoji = randomEmojiProvider()
 	}
 }
 
 final class RandomEmojiViewModelTests: XCTestCase {
 
 	func test_init_doesNotSendAnyMessages() {
-		let spy = GetEmojiSpy()
-		let _ = RandomEmojiViewModel(getEmoji: spy.getEmoji)
+		let spy = GetRndomEmojiSpy()
+		let _ = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
 
 		XCTAssertEqual(spy.callCount, 0)
 	}
 
 	func test_getRandomEmoji_callsClosure() {
-		let spy = GetEmojiSpy()
-		let sut = RandomEmojiViewModel(getEmoji: spy.getEmoji)
+		let spy = GetRndomEmojiSpy()
+		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
 
 		sut.getRandomEmoji()
 
@@ -41,9 +41,9 @@ final class RandomEmojiViewModelTests: XCTestCase {
 	}
 
 	func test_getRandomEmoji_setsLocalVariable() {
-		let spy = GetEmojiSpy()
+		let spy = GetRndomEmojiSpy()
 		let expectedEmoji = "✨"
-		let sut = RandomEmojiViewModel(getEmoji: spy.getEmoji)
+		let sut = RandomEmojiViewModel(randomEmojiProvider: spy.getEmoji)
 
 		spy.completeWithEmoji(expectedEmoji)
 		sut.getRandomEmoji()
@@ -55,7 +55,7 @@ final class RandomEmojiViewModelTests: XCTestCase {
 
 // MARK: - Helpers
 
-final class GetEmojiSpy {
+final class GetRndomEmojiSpy {
 	private(set) var callCount: Int = 0
 
 	private var emojiToCompleteWith: String?
