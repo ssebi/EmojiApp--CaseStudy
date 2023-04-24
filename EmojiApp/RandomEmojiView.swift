@@ -32,17 +32,16 @@ struct RandomEmojiView: View {
 }
 
 struct ContentView_Previews: PreviewProvider {
+	static let emojiLoaderStub = CurrentValueSubject<String, Error>("✨")
+	static let viewModel: RandomEmojiViewModel = {
+		let viewModel = RandomEmojiViewModel(randomEmojiLoader:
+			emojiLoaderStub.eraseToAnyPublisher
+		)
+		return viewModel
+	}()
+
     static var previews: some View {
-		RandomEmojiUIComposer
-			.makeRandomEmoji(
-				with: {
-					Deferred {
-						Future { completion in
-							completion(.success("✨"))
-						}
-					}
-					.eraseToAnyPublisher()
-				}
-			)
+		RandomEmojiView(viewModel: viewModel)
+			.previewLayout(.fixed(width: 300, height: 600))
     }
 }
