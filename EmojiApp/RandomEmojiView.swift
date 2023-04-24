@@ -16,11 +16,11 @@ struct RandomEmojiView: View {
 	}
 
 	var body: some View {
-		if let emoji = viewModel.emoji {
-			Text(emoji)
-		} else {
+		if viewModel.emoji.isEmpty {
 			ProgressView()
 				.onAppear(perform: viewModel.getRandomEmoji)
+		} else {
+			Text(viewModel.emoji)
 		}
 	}
 }
@@ -29,7 +29,14 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
 		RandomEmojiUIComposer
 			.makeRandomEmoji(
-				with: { Just("✨").eraseToAnyPublisher() }
+				with: {
+					Deferred {
+						Future { completion in
+							completion(.success("✨"))
+						}
+					}
+					.eraseToAnyPublisher()
+				}
 			)
     }
 }

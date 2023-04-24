@@ -32,7 +32,19 @@ final class RandomEmojiViewModelTests: XCTestCase {
 		sut.getRandomEmoji()
 		spy.completeWithEmoji(expectedEmoji)
 
-		XCTAssertEqual(sut.emoji, expectedEmoji)
+		var receivedValue: String?
+		let exp = expectation(description: "Waiting for expectation")
+		let subscription = sut
+			.$emoji
+			.filter { !$0.isEmpty }
+			.sink { value in
+				receivedValue = value
+				exp.fulfill()
+			}
+		wait(for: [exp], timeout: 0.1)
+		subscription.cancel()
+
+		XCTAssertEqual(receivedValue, expectedEmoji)
 	}
 
 	// MARK: - Helpers
@@ -55,10 +67,10 @@ final class GetRandomEmojiSpy {
 		requests.count
 	}
 
-	private var requests: [PassthroughSubject<String?, Never>] = []
+	private var requests: [PassthroughSubject<String, Error>] = []
 
-	func getEmojiPublisher() -> AnyPublisher<String?, Never> {
-		let publisher = PassthroughSubject<String?, Never>()
+	func getEmojiPublisher() -> AnyPublisher<String, Error> {
+		let publisher = PassthroughSubject<String, Error>()
 		requests.append(publisher)
 		return publisher.eraseToAnyPublisher()
 	}

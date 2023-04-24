@@ -9,17 +9,18 @@ import Foundation
 import Combine
 
 public final class RandomEmojiViewModel: ObservableObject {
-	@Published public private(set) var emoji: String?
+	@Published public private(set) var emoji: String = ""
 
-	private let randomEmojiLoader: () -> AnyPublisher<String?, Never>
+	private let randomEmojiLoader: () -> AnyPublisher<String, Error>
 
-	public init(randomEmojiLoader: @escaping () -> AnyPublisher<String?, Never>) {
+	public init(randomEmojiLoader: @escaping () -> AnyPublisher<String, Error>) {
 		self.randomEmojiLoader = randomEmojiLoader
 	}
 
 	public func getRandomEmoji() {
 		randomEmojiLoader()
 			.receive(on: DispatchQueue.main)
+			.replaceError(with: "")
 			.assign(to: &$emoji)
 	}
 }

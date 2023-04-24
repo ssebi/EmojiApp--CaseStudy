@@ -17,29 +17,12 @@ class DependencyContainer {
 		URL(string: "https://emojihub.yurace.pro")!
 	}()
 
-	func randomEmojiLoader() -> AnyPublisher<String?, Never> {
+	func randomEmojiLoader() -> AnyPublisher<String, Error> {
 		let url = RandomEmojiEndpoint.get.url(baseURL: baseURL)
 		return apiClient
 			.getResponsePublisher(url: url)
 			.tryMap(RandomEmojiMapper.map)
-			.replaceError(with: nil)
-			.map(\.?.value)
+			.map(\.value)
 			.eraseToAnyPublisher()
-	}
-}
-
-extension APIService {
-	typealias Publisher = AnyPublisher<(Data, HTTPURLResponse), Error>
-
-	func getResponsePublisher(url: URL) -> Publisher {
-		return Deferred {
-			Future { completion in
-				Task {
-					let result = try await getResponse(for: url)
-					completion(.success(result))
-				}
-			}
-		}
-		.eraseToAnyPublisher()
 	}
 }

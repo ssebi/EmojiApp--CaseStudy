@@ -13,7 +13,7 @@ public struct RandomEmojiUIComposer {
 	private init() { }
 
 	public static func makeRandomEmoji(
-		with randomEmojiLoader: @escaping () -> AnyPublisher<String?, Never>
+		with randomEmojiLoader: @escaping () -> AnyPublisher<String, Error>
 	) -> some View {
 		let viewModel = RandomEmojiViewModel(randomEmojiLoader: randomEmojiLoader)
 		return RandomEmojiView(viewModel: viewModel)
