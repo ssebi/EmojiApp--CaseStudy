@@ -62,7 +62,7 @@ final class RandomEmojiViewModelTests: XCTestCase {
 		let subscription = publisher
 			.filter { expectedValue.isEmpty ? true : !$0.isEmpty }
 			.sink { completion in
-				XCTFail()
+				XCTFail("Did not expect to complete")
 			} receiveValue: { value in
 				receivedValue = value
 				exp.fulfill()
