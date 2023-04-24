@@ -213,13 +213,12 @@
 		C63B66F529EBFF84007A9C85 /* EmojiApp */ = {
 			isa = PBXGroup;
 			children = (
-				84ECB56229F00DC2009CC648 /* RandomEmojiFeature */,
 				84ECB53C29F001B1009CC648 /* APIService */,
-				C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */,
+				84ECB56229F00DC2009CC648 /* RandomEmojiFeature */,
 				C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */,
-				C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */,
-				84FFDBE729F2B0B0004661E6 /* RandomEmojiUIComposer.swift */,
-				C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */,
+				C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */,
+				C68B1B8B29F6F3FE00FD8997 /* Composers */,
+				C68B1B8C29F6F40A00FD8997 /* Helpers */,
 				C63B66FA29EBFF85007A9C85 /* Assets.xcassets */,
 				C63B66FC29EBFF85007A9C85 /* EmojiApp.entitlements */,
 				C63B66FD29EBFF85007A9C85 /* Preview Content */,
@@ -260,6 +259,23 @@
 				84DC8D8229F2AA980024C22A /* RandomEmojiViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C68B1B8B29F6F3FE00FD8997 /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				84FFDBE729F2B0B0004661E6 /* RandomEmojiUIComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
+		C68B1B8C29F6F40A00FD8997 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */,
+				C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
