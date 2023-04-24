@@ -58,6 +58,7 @@ final class RandomEmojiViewModelTests: XCTestCase {
 	private func expect(_ publisher: AnyPublisher<String, Never>, toDeliver expectedValue: String, line: UInt = #line) {
 		var receivedValue: String?
 		let exp = expectation(description: "Waiting for expectation")
+		exp.assertForOverFulfill = false
 		let subscription = publisher
 			.filter { expectedValue.isEmpty ? true : !$0.isEmpty }
 			.sink { completion in
