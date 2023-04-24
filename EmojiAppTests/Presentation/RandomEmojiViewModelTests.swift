@@ -35,6 +35,15 @@ final class RandomEmojiViewModelTests: XCTestCase {
 		expect(sut.$emoji.eraseToAnyPublisher(), toDeliver: expectedEmoji)
 	}
 
+	func test_getRandomEmoji_setsLocalVariableAsEmptyOnError() async {
+		let (sut, spy) = makeSUT()
+
+		sut.getRandomEmoji()
+		spy.completeWithError(NSError())
+
+		expect(sut.$emoji.eraseToAnyPublisher(), toDeliver: "")
+	}
+
 	// MARK: - Helpers
 	private func makeSUT(line: UInt = #line) -> (RandomEmojiViewModel, GetRandomEmojiSpy) {
 		let spy = GetRandomEmojiSpy()
@@ -46,11 +55,11 @@ final class RandomEmojiViewModelTests: XCTestCase {
 		return (sut, spy)
 	}
 
-	private func expect(_ publisher: AnyPublisher<String, Never>, toDeliver expectedValue: String) {
+	private func expect(_ publisher: AnyPublisher<String, Never>, toDeliver expectedValue: String, line: UInt = #line) {
 		var receivedValue: String?
 		let exp = expectation(description: "Waiting for expectation")
 		let subscription = publisher
-			.filter { !$0.isEmpty }
+			.filter { expectedValue.isEmpty ? true : !$0.isEmpty }
 			.sink { completion in
 				XCTFail()
 			} receiveValue: { value in
@@ -59,7 +68,8 @@ final class RandomEmojiViewModelTests: XCTestCase {
 			}
 		wait(for: [exp], timeout: 0.1)
 		subscription.cancel()
-		XCTAssertEqual(receivedValue, expectedValue)
+
+		XCTAssertEqual(receivedValue, expectedValue, file: #filePath, line: line)
 	}
 
 }
@@ -81,5 +91,9 @@ final class GetRandomEmojiSpy {
 
 	func completeWithEmoji(_ emoji: String, at index: Int = 0) {
 		requests[index].send(emoji)
+	}
+
+	func completeWithError(_ error: Error, at index: Int = 0) {
+		requests[index].send(completion: .failure(error))
 	}
 }
