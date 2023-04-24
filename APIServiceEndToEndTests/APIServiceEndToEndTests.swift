@@ -16,7 +16,7 @@ final class APIServiceEndToEndTests: XCTestCase {
 
 		do {
 			_ = try await sut.getResponse(for: someInvalidURL)
-			XCTFail("Expected th throw an error")
+			XCTFail("Expected to throw an error")
 		} catch {
 			let receivedError = error as NSError
 			XCTAssertEqual(receivedError.code, -1002)
