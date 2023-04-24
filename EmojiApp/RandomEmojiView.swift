@@ -20,7 +20,13 @@ struct RandomEmojiView: View {
 			ProgressView()
 				.onAppear(perform: viewModel.getRandomEmoji)
 		} else {
-			Text(viewModel.emoji)
+			VStack {
+				Text(viewModel.emoji)
+					.font(.system(size: 200))
+
+				Button("Random", action: viewModel.getRandomEmoji)
+					.buttonStyle(.borderedProminent)
+			}
 		}
 	}
 }
