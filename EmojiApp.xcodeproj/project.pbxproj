@@ -69,7 +69,7 @@
 		C63B66FA29EBFF85007A9C85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C63B66FC29EBFF85007A9C85 /* EmojiApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmojiApp.entitlements; sourceTree = "<group>"; };
 		C63B66FE29EBFF85007A9C85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C63B670929EBFF96007A9C85 /* EmojiAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C63B670929EBFF96007A9C85 /* RandomEmojiFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomEmojiFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeScalarTests.swift; sourceTree = "<group>"; };
 		C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Combine.swift"; sourceTree = "<group>"; };
@@ -129,7 +129,8 @@
 		84DC8D8129F2AA930024C22A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				84DC8D8229F2AA980024C22A /* RandomEmojiViewModel.swift */,
+				C68B1B8529F6DE8100FD8997 /* ViewModels */,
+				C68B1B8429F6DE7900FD8997 /* Views */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -191,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				C63B66F529EBFF84007A9C85 /* EmojiApp */,
-				C63B670A29EBFF96007A9C85 /* EmojiAppTests */,
+				C63B670A29EBFF96007A9C85 /* RandomEmojiFeatureTests */,
 				84ECB53429EED094009CC648 /* APIServiceEndToEndTests */,
 				C63B66F429EBFF84007A9C85 /* Products */,
 			);
@@ -201,7 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				C63B66F329EBFF84007A9C85 /* EmojiApp.app */,
-				C63B670929EBFF96007A9C85 /* EmojiAppTests.xctest */,
+				C63B670929EBFF96007A9C85 /* RandomEmojiFeatureTests.xctest */,
 				84ECB53329EED094009CC648 /* APIServiceEndToEndTests.xctest */,
 			);
 			name = Products;
@@ -215,7 +216,6 @@
 				C63B66F629EBFF84007A9C85 /* EmojiAppApp.swift */,
 				C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */,
 				C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */,
-				C63B66F829EBFF84007A9C85 /* RandomEmojiView.swift */,
 				84FFDBE729F2B0B0004661E6 /* RandomEmojiUIComposer.swift */,
 				C63B66FA29EBFF85007A9C85 /* Assets.xcassets */,
 				C63B66FC29EBFF85007A9C85 /* EmojiApp.entitlements */,
@@ -232,7 +232,7 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C63B670A29EBFF96007A9C85 /* EmojiAppTests */ = {
+		C63B670A29EBFF96007A9C85 /* RandomEmojiFeatureTests */ = {
 			isa = PBXGroup;
 			children = (
 				C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */,
@@ -240,7 +240,23 @@
 				84DC8D7E29F29F540024C22A /* Presentation */,
 				84DC8D8429F2AB090024C22A /* XCTestCase+MemoryLeakTracking.swift */,
 			);
-			path = EmojiAppTests;
+			path = RandomEmojiFeatureTests;
+			sourceTree = "<group>";
+		};
+		C68B1B8429F6DE7900FD8997 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C63B66F829EBFF84007A9C85 /* RandomEmojiView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C68B1B8529F6DE8100FD8997 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				84DC8D8229F2AA980024C22A /* RandomEmojiViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,9 +297,9 @@
 			productReference = C63B66F329EBFF84007A9C85 /* EmojiApp.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C63B670829EBFF96007A9C85 /* EmojiAppTests */ = {
+		C63B670829EBFF96007A9C85 /* RandomEmojiFeatureTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C63B670F29EBFF96007A9C85 /* Build configuration list for PBXNativeTarget "EmojiAppTests" */;
+			buildConfigurationList = C63B670F29EBFF96007A9C85 /* Build configuration list for PBXNativeTarget "RandomEmojiFeatureTests" */;
 			buildPhases = (
 				C63B670529EBFF96007A9C85 /* Sources */,
 				C63B670629EBFF96007A9C85 /* Frameworks */,
@@ -294,9 +310,9 @@
 			dependencies = (
 				C63B670E29EBFF96007A9C85 /* PBXTargetDependency */,
 			);
-			name = EmojiAppTests;
+			name = RandomEmojiFeatureTests;
 			productName = EmojiAppTests;
-			productReference = C63B670929EBFF96007A9C85 /* EmojiAppTests.xctest */;
+			productReference = C63B670929EBFF96007A9C85 /* RandomEmojiFeatureTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -336,7 +352,7 @@
 			projectRoot = "";
 			targets = (
 				C63B66F229EBFF84007A9C85 /* EmojiApp */,
-				C63B670829EBFF96007A9C85 /* EmojiAppTests */,
+				C63B670829EBFF96007A9C85 /* RandomEmojiFeatureTests */,
 				84ECB53229EED094009CC648 /* APIServiceEndToEndTests */,
 			);
 		};
@@ -722,7 +738,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C63B670F29EBFF96007A9C85 /* Build configuration list for PBXNativeTarget "EmojiAppTests" */ = {
+		C63B670F29EBFF96007A9C85 /* Build configuration list for PBXNativeTarget "RandomEmojiFeatureTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C63B671029EBFF96007A9C85 /* Debug */,
