@@ -32,19 +32,7 @@ final class RandomEmojiViewModelTests: XCTestCase {
 		sut.getRandomEmoji()
 		spy.completeWithEmoji(expectedEmoji)
 
-		var receivedValue: String?
-		let exp = expectation(description: "Waiting for expectation")
-		let subscription = sut
-			.$emoji
-			.filter { !$0.isEmpty }
-			.sink { value in
-				receivedValue = value
-				exp.fulfill()
-			}
-		wait(for: [exp], timeout: 0.1)
-		subscription.cancel()
-
-		XCTAssertEqual(receivedValue, expectedEmoji)
+		expect(sut.$emoji.eraseToAnyPublisher(), toDeliver: expectedEmoji)
 	}
 
 	// MARK: - Helpers
@@ -56,6 +44,22 @@ final class RandomEmojiViewModelTests: XCTestCase {
 		trackForMemoryLeaks(spy, file: #filePath, line: line)
 
 		return (sut, spy)
+	}
+
+	private func expect(_ publisher: AnyPublisher<String, Never>, toDeliver expectedValue: String) {
+		var receivedValue: String?
+		let exp = expectation(description: "Waiting for expectation")
+		let subscription = publisher
+			.filter { !$0.isEmpty }
+			.sink { completion in
+				XCTFail()
+			} receiveValue: { value in
+				receivedValue = value
+				exp.fulfill()
+			}
+		wait(for: [exp], timeout: 0.1)
+		subscription.cancel()
+		XCTAssertEqual(receivedValue, expectedValue)
 	}
 
 }
