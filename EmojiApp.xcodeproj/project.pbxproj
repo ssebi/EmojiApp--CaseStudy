@@ -154,8 +154,8 @@
 		84ECB53C29F001B1009CC648 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				84ECB53D29F001BC009CC648 /* APIService.swift */,
 				84ECB54129F002D5009CC648 /* Infrastructure */,
+				84ECB53D29F001BC009CC648 /* APIService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
