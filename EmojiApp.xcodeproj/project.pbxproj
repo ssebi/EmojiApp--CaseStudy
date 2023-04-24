@@ -28,6 +28,7 @@
 		C63B670C29EBFF96007A9C85 /* UnicodeScalarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */; };
 		C68B1B8129F2E9A400FD8997 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */; };
 		C68B1B8329F2EECB00FD8997 /* APIService+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */; };
+		C68B1B8829F6E67500FD8997 /* APIServiceStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeScalarTests.swift; sourceTree = "<group>"; };
 		C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
 		C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Combine.swift"; sourceTree = "<group>"; };
+		C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceStubs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +219,7 @@
 				C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */,
 				C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */,
 				84FFDBE729F2B0B0004661E6 /* RandomEmojiUIComposer.swift */,
+				C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */,
 				C63B66FA29EBFF85007A9C85 /* Assets.xcassets */,
 				C63B66FC29EBFF85007A9C85 /* EmojiApp.entitlements */,
 				C63B66FD29EBFF85007A9C85 /* Preview Content */,
@@ -406,6 +409,7 @@
 				C63B66F929EBFF84007A9C85 /* RandomEmojiView.swift in Sources */,
 				84DC8D7A29F29A830024C22A /* MappingError.swift in Sources */,
 				84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */,
+				C68B1B8829F6E67500FD8997 /* APIServiceStubs.swift in Sources */,
 				84ECB53E29F001BC009CC648 /* APIService.swift in Sources */,
 				84DC8D7729F29A5E0024C22A /* RandomEmojiMapper.swift in Sources */,
 				C68B1B8129F2E9A400FD8997 /* DependencyContainer.swift in Sources */,

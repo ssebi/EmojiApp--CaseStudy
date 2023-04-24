@@ -11,7 +11,7 @@ import Combine
 @main
 struct EmojiAppApp: App {
 
-	private let dependencyContainer = DependencyContainer(apiClient: AlwaysSucceedingAPIServiceStub())
+	private let dependencyContainer = DependencyContainer()
 
     var body: some Scene {
 		WindowGroup {
