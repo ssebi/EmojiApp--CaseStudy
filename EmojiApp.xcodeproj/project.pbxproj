@@ -148,13 +148,13 @@
 			path = URLSessionHTTPClientEndToEndTests;
 			sourceTree = "<group>";
 		};
-		84ECB53C29F001B1009CC648 /* APIService */ = {
+		84ECB53C29F001B1009CC648 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				84ECB54129F002D5009CC648 /* Infrastructure */,
 				84ECB53D29F001BC009CC648 /* HTTPClient.swift */,
 			);
-			path = APIService;
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		84ECB54129F002D5009CC648 /* Infrastructure */ = {
@@ -207,7 +207,7 @@
 		C63B66F529EBFF84007A9C85 /* EmojiApp */ = {
 			isa = PBXGroup;
 			children = (
-				84ECB53C29F001B1009CC648 /* APIService */,
+				84ECB53C29F001B1009CC648 /* Networking */,
 				84ECB56229F00DC2009CC648 /* RandomEmojiFeature */,
 				C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */,
 				C68B1B8D29F7AF2C00FD8997 /* main.swift */,
