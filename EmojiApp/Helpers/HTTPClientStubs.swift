@@ -1,5 +1,5 @@
 //
-//  APIServiceStubs.swift
+//  HTTPClientStubs.swift
 //  EmojiApp
 //
 //  Created by Sebastian Vidrea on 24.04.2023.
@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct FailingAPIServiceStub: APIService {
+struct FailingHTTPClientStub: HTTPClient {
 	func getResponse(for url: URL) async throws -> (data: Data, httpURLResponse: HTTPURLResponse) {
 		throw NSError(domain: "emoji.app", code: 0)
 	}
 }
 
-struct AlwaysSucceedingAPIServiceStub: APIService {
+struct AlwaysSucceedingHTTPClientStub: HTTPClient {
 	func getResponse(for url: URL) async throws -> (data: Data, httpURLResponse: HTTPURLResponse) {
 		(
 			Data(

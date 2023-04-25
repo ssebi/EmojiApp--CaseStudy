@@ -1,6 +1,6 @@
 //
-//  APIServiceEndToEndTests.swift
-//  APIServiceEndToEndTests
+//  URLSessionHTTPClientEndToEndTests.swift
+//  URLSessionHTTPClientEndToEndTests
 //
 //  Created by Sebastian Vidrea on 18.04.2023.
 //
@@ -8,7 +8,7 @@
 import XCTest
 import EmojiApp
 
-final class APIServiceEndToEndTests: XCTestCase {
+final class URLSessionHTTPClientEndToEndTests: XCTestCase {
 
 	func test_getResponse_deliversErrorOnInvalidURL() async {
 		let sut = makeSUT()
@@ -42,8 +42,8 @@ final class APIServiceEndToEndTests: XCTestCase {
 	}
 
 	// MARK: - Helpers
-	private func makeSUT() -> APIService {
-		URLSessionAPIService()
+	private func makeSUT() -> HTTPClient {
+		URLSessionHTTPClient()
 	}
 
 }

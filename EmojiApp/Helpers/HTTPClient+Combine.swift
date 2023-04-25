@@ -1,5 +1,5 @@
 //
-//  APIService+Combine.swift
+//  HTTPClient+Combine.swift
 //  EmojiApp
 //
 //  Created by Sebastian Vidrea on 21.04.2023.
@@ -8,7 +8,7 @@
 import Foundation
 import Combine
 
-extension APIService {
+extension HTTPClient {
 	typealias Publisher = AnyPublisher<(Data, HTTPURLResponse), Error>
 
 	func getResponsePublisher(url: URL) -> Publisher {

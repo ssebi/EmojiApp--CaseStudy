@@ -1,5 +1,5 @@
 //
-//  URLSessionAPIService.swift
+//  URLSessionHTTPClient.swift
 //  EmojiApp
 //
 //  Created by Sebastian Vidrea on 19.04.2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-final public class URLSessionAPIService: APIService {
-	enum APIServiceError: Error {
+final public class URLSessionHTTPClient: HTTPClient {
+	enum HTTPClientError: Error {
 		case nonHTTPURLResponse
 	}
 
@@ -21,7 +21,7 @@ final public class URLSessionAPIService: APIService {
 	public func getResponse(for url: URL) async throws -> (data: Data, httpURLResponse: HTTPURLResponse) {
 		let response = try await URLSession(configuration: .default).data(from: url)
 		guard let httpURLResponse = response.1 as? HTTPURLResponse else {
-			throw APIServiceError.nonHTTPURLResponse
+			throw HTTPClientError.nonHTTPURLResponse
 		}
 
 		return (

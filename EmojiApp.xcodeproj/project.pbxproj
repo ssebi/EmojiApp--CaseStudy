@@ -14,9 +14,9 @@
 		84DC8D8329F2AA980024C22A /* RandomEmojiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC8D8229F2AA980024C22A /* RandomEmojiViewModel.swift */; };
 		84DC8D8529F2AB090024C22A /* XCTestCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DC8D8429F2AB090024C22A /* XCTestCase+MemoryLeakTracking.swift */; };
 		84ECB52929EECBA4009CC648 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB52829EECBA4009CC648 /* Emoji.swift */; };
-		84ECB53629EED094009CC648 /* APIServiceEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53529EED094009CC648 /* APIServiceEndToEndTests.swift */; };
-		84ECB53E29F001BC009CC648 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53D29F001BC009CC648 /* APIService.swift */; };
-		84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */; };
+		84ECB53629EED094009CC648 /* URLSessionHTTPClientEndToEndTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53529EED094009CC648 /* URLSessionHTTPClientEndToEndTests.swift */; };
+		84ECB53E29F001BC009CC648 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53D29F001BC009CC648 /* HTTPClient.swift */; };
+		84ECB54029F001C8009CC648 /* URLSessionHTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB53F29F001C8009CC648 /* URLSessionHTTPClient.swift */; };
 		84ECB56129F00C4E009CC648 /* RandomEmojiEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB56029F00C4E009CC648 /* RandomEmojiEndpointTests.swift */; };
 		84ECB56529F00DD6009CC648 /* RandomEmojiEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB56429F00DD6009CC648 /* RandomEmojiEndpoint.swift */; };
 		84ECB56729F00E48009CC648 /* RandomEmojiMapperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84ECB56629F00E48009CC648 /* RandomEmojiMapperTests.swift */; };
@@ -27,8 +27,8 @@
 		C63B66FF29EBFF85007A9C85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C63B66FE29EBFF85007A9C85 /* Preview Assets.xcassets */; };
 		C63B670C29EBFF96007A9C85 /* UnicodeScalarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */; };
 		C68B1B8129F2E9A400FD8997 /* DependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */; };
-		C68B1B8329F2EECB00FD8997 /* APIService+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */; };
-		C68B1B8829F6E67500FD8997 /* APIServiceStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */; };
+		C68B1B8329F2EECB00FD8997 /* HTTPClient+Combine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8229F2EECB00FD8997 /* HTTPClient+Combine.swift */; };
+		C68B1B8829F6E67500FD8997 /* HTTPClientStubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8729F6E67500FD8997 /* HTTPClientStubs.swift */; };
 		C68B1B8E29F7AF2C00FD8997 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C68B1B8D29F7AF2C00FD8997 /* main.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,10 +57,10 @@
 		84DC8D8229F2AA980024C22A /* RandomEmojiViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiViewModel.swift; sourceTree = "<group>"; };
 		84DC8D8429F2AB090024C22A /* XCTestCase+MemoryLeakTracking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+MemoryLeakTracking.swift"; sourceTree = "<group>"; };
 		84ECB52829EECBA4009CC648 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
-		84ECB53329EED094009CC648 /* APIServiceEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = APIServiceEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		84ECB53529EED094009CC648 /* APIServiceEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceEndToEndTests.swift; sourceTree = "<group>"; };
-		84ECB53D29F001BC009CC648 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
-		84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionAPIService.swift; sourceTree = "<group>"; };
+		84ECB53329EED094009CC648 /* URLSessionHTTPClientEndToEndTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = URLSessionHTTPClientEndToEndTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84ECB53529EED094009CC648 /* URLSessionHTTPClientEndToEndTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClientEndToEndTests.swift; sourceTree = "<group>"; };
+		84ECB53D29F001BC009CC648 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		84ECB53F29F001C8009CC648 /* URLSessionHTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionHTTPClient.swift; sourceTree = "<group>"; };
 		84ECB56029F00C4E009CC648 /* RandomEmojiEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiEndpointTests.swift; sourceTree = "<group>"; };
 		84ECB56429F00DD6009CC648 /* RandomEmojiEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiEndpoint.swift; sourceTree = "<group>"; };
 		84ECB56629F00E48009CC648 /* RandomEmojiMapperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomEmojiMapperTests.swift; sourceTree = "<group>"; };
@@ -74,8 +74,8 @@
 		C63B670929EBFF96007A9C85 /* RandomEmojiFeatureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomEmojiFeatureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C63B670B29EBFF96007A9C85 /* UnicodeScalarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnicodeScalarTests.swift; sourceTree = "<group>"; };
 		C68B1B8029F2E9A400FD8997 /* DependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyContainer.swift; sourceTree = "<group>"; };
-		C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "APIService+Combine.swift"; sourceTree = "<group>"; };
-		C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServiceStubs.swift; sourceTree = "<group>"; };
+		C68B1B8229F2EECB00FD8997 /* HTTPClient+Combine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPClient+Combine.swift"; sourceTree = "<group>"; };
+		C68B1B8729F6E67500FD8997 /* HTTPClientStubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientStubs.swift; sourceTree = "<group>"; };
 		C68B1B8D29F7AF2C00FD8997 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,19 +147,19 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		84ECB53429EED094009CC648 /* APIServiceEndToEndTests */ = {
+		84ECB53429EED094009CC648 /* URLSessionHTTPClientEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
-				84ECB53529EED094009CC648 /* APIServiceEndToEndTests.swift */,
+				84ECB53529EED094009CC648 /* URLSessionHTTPClientEndToEndTests.swift */,
 			);
-			path = APIServiceEndToEndTests;
+			path = URLSessionHTTPClientEndToEndTests;
 			sourceTree = "<group>";
 		};
 		84ECB53C29F001B1009CC648 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
 				84ECB54129F002D5009CC648 /* Infrastructure */,
-				84ECB53D29F001BC009CC648 /* APIService.swift */,
+				84ECB53D29F001BC009CC648 /* HTTPClient.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 		84ECB54129F002D5009CC648 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				84ECB53F29F001C8009CC648 /* URLSessionAPIService.swift */,
+				84ECB53F29F001C8009CC648 /* URLSessionHTTPClient.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			children = (
 				C63B66F529EBFF84007A9C85 /* EmojiApp */,
 				C63B670A29EBFF96007A9C85 /* RandomEmojiFeatureTests */,
-				84ECB53429EED094009CC648 /* APIServiceEndToEndTests */,
+				84ECB53429EED094009CC648 /* URLSessionHTTPClientEndToEndTests */,
 				C63B66F429EBFF84007A9C85 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 			children = (
 				C63B66F329EBFF84007A9C85 /* EmojiApp.app */,
 				C63B670929EBFF96007A9C85 /* RandomEmojiFeatureTests.xctest */,
-				84ECB53329EED094009CC648 /* APIServiceEndToEndTests.xctest */,
+				84ECB53329EED094009CC648 /* URLSessionHTTPClientEndToEndTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,8 +275,8 @@
 		C68B1B8C29F6F40A00FD8997 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C68B1B8729F6E67500FD8997 /* APIServiceStubs.swift */,
-				C68B1B8229F2EECB00FD8997 /* APIService+Combine.swift */,
+				C68B1B8729F6E67500FD8997 /* HTTPClientStubs.swift */,
+				C68B1B8229F2EECB00FD8997 /* HTTPClient+Combine.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -284,9 +284,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		84ECB53229EED094009CC648 /* APIServiceEndToEndTests */ = {
+		84ECB53229EED094009CC648 /* URLSessionHTTPClientEndToEndTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 84ECB53929EED094009CC648 /* Build configuration list for PBXNativeTarget "APIServiceEndToEndTests" */;
+			buildConfigurationList = 84ECB53929EED094009CC648 /* Build configuration list for PBXNativeTarget "URLSessionHTTPClientEndToEndTests" */;
 			buildPhases = (
 				84ECB52F29EED094009CC648 /* Sources */,
 				84ECB53029EED094009CC648 /* Frameworks */,
@@ -297,9 +297,9 @@
 			dependencies = (
 				84ECB53829EED094009CC648 /* PBXTargetDependency */,
 			);
-			name = APIServiceEndToEndTests;
+			name = URLSessionHTTPClientEndToEndTests;
 			productName = APIServiceEndToEndTests;
-			productReference = 84ECB53329EED094009CC648 /* APIServiceEndToEndTests.xctest */;
+			productReference = 84ECB53329EED094009CC648 /* URLSessionHTTPClientEndToEndTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		C63B66F229EBFF84007A9C85 /* EmojiApp */ = {
@@ -375,7 +375,7 @@
 			targets = (
 				C63B66F229EBFF84007A9C85 /* EmojiApp */,
 				C63B670829EBFF96007A9C85 /* RandomEmojiFeatureTests */,
-				84ECB53229EED094009CC648 /* APIServiceEndToEndTests */,
+				84ECB53229EED094009CC648 /* URLSessionHTTPClientEndToEndTests */,
 			);
 		};
 /* End PBXProject section */
@@ -411,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84ECB53629EED094009CC648 /* APIServiceEndToEndTests.swift in Sources */,
+				84ECB53629EED094009CC648 /* URLSessionHTTPClientEndToEndTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,16 +420,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				84FFDBE829F2B0B0004661E6 /* RandomEmojiUIComposer.swift in Sources */,
-				C68B1B8329F2EECB00FD8997 /* APIService+Combine.swift in Sources */,
+				C68B1B8329F2EECB00FD8997 /* HTTPClient+Combine.swift in Sources */,
 				84DC8D8329F2AA980024C22A /* RandomEmojiViewModel.swift in Sources */,
 				84ECB56529F00DD6009CC648 /* RandomEmojiEndpoint.swift in Sources */,
 				84ECB52929EECBA4009CC648 /* Emoji.swift in Sources */,
 				84DC8D7D29F29E2D0024C22A /* UnicodeMapper.swift in Sources */,
 				C63B66F929EBFF84007A9C85 /* RandomEmojiView.swift in Sources */,
 				84DC8D7A29F29A830024C22A /* MappingError.swift in Sources */,
-				84ECB54029F001C8009CC648 /* URLSessionAPIService.swift in Sources */,
-				C68B1B8829F6E67500FD8997 /* APIServiceStubs.swift in Sources */,
-				84ECB53E29F001BC009CC648 /* APIService.swift in Sources */,
+				84ECB54029F001C8009CC648 /* URLSessionHTTPClient.swift in Sources */,
+				C68B1B8829F6E67500FD8997 /* HTTPClientStubs.swift in Sources */,
+				84ECB53E29F001BC009CC648 /* HTTPClient.swift in Sources */,
 				C68B1B8E29F7AF2C00FD8997 /* main.swift in Sources */,
 				84DC8D7729F29A5E0024C22A /* RandomEmojiMapper.swift in Sources */,
 				C68B1B8129F2E9A400FD8997 /* DependencyContainer.swift in Sources */,
@@ -475,7 +475,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.theappcompany.APIServiceEndToEndTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theappcompany.URLSessionHTTPClientEndToEndTestsEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -498,7 +498,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.theappcompany.APIServiceEndToEndTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theappcompany.URLSessionHTTPClientEndToEndTestsEndToEndTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -747,7 +747,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		84ECB53929EED094009CC648 /* Build configuration list for PBXNativeTarget "APIServiceEndToEndTests" */ = {
+		84ECB53929EED094009CC648 /* Build configuration list for PBXNativeTarget "URLSessionHTTPClientEndToEndTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				84ECB53A29EED094009CC648 /* Debug */,

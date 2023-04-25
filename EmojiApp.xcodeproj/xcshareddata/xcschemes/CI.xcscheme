@@ -34,8 +34,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "84ECB53229EED094009CC648"
-               BuildableName = "APIServiceEndToEndTests.xctest"
-               BlueprintName = "APIServiceEndToEndTests"
+               BuildableName = "URLSessionHTTPClientEndToEndTests.xctest"
+               BlueprintName = "URLSessionHTTPClientEndToEndTests"
                ReferencedContainer = "container:EmojiApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
