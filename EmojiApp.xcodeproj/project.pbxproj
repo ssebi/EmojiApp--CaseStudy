@@ -109,6 +109,7 @@
 			children = (
 				84DC8D7929F29A830024C22A /* MappingError.swift */,
 				84DC8D7C29F29E2D0024C22A /* UnicodeMapper.swift */,
+				84ECB52829EECBA4009CC648 /* Emoji.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -137,14 +138,6 @@
 				C68B1B8429F6DE7900FD8997 /* Views */,
 			);
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		84ECB52729EECB6E009CC648 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				84ECB52829EECBA4009CC648 /* Emoji.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		84ECB53429EED094009CC648 /* URLSessionHTTPClientEndToEndTests */ = {
@@ -176,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				84DC8D7829F29A790024C22A /* Domain */,
-				84ECB52729EECB6E009CC648 /* Models */,
 				84ECB56329F00DD0009CC648 /* API */,
 				84DC8D8129F2AA930024C22A /* Presentation */,
 			);
