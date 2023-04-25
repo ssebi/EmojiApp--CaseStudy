@@ -10,5 +10,5 @@ import Foundation
 if NSClassFromString("XCTestCase") != nil {
 	EmptyApp.main()
 } else {
-	EmojiAppApp.main()
+	EmojiApp.main()
 }
