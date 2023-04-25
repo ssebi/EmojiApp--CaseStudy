@@ -8,7 +8,6 @@
 import SwiftUI
 import Combine
 
-@main
 struct EmojiAppApp: App {
 
 	private let dependencyContainer = DependencyContainer()
@@ -22,4 +21,12 @@ struct EmojiAppApp: App {
 		}
     }
 
+}
+
+struct EmptyApp: App {
+	var body: some Scene {
+		WindowGroup {
+			EmptyView()
+		}
+	}
 }
