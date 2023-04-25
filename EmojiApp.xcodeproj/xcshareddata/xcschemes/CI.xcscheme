@@ -5,22 +5,6 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
-      <BuildActionEntries>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C63B66F229EBFF84007A9C85"
-               BuildableName = "EmojiApp.app"
-               BlueprintName = "EmojiApp"
-               ReferencedContainer = "container:EmojiApp.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -29,24 +13,22 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "84ECB53229EED094009CC648"
-               BuildableName = "URLSessionHTTPClientEndToEndTests.xctest"
-               BlueprintName = "URLSessionHTTPClientEndToEndTests"
-               ReferencedContainer = "container:EmojiApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO"
-            testExecutionOrdering = "random">
+            skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C63B670829EBFF96007A9C85"
                BuildableName = "RandomEmojiFeatureTests.xctest"
                BlueprintName = "RandomEmojiFeatureTests"
+               ReferencedContainer = "container:EmojiApp.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "84ECB53229EED094009CC648"
+               BuildableName = "URLSessionHTTPClientEndToEndTests.xctest"
+               BlueprintName = "URLSessionHTTPClientEndToEndTests"
                ReferencedContainer = "container:EmojiApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -62,8 +44,7 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C63B66F229EBFF84007A9C85"
@@ -71,7 +52,7 @@
             BlueprintName = "EmojiApp"
             ReferencedContainer = "container:EmojiApp.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -79,16 +60,6 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C63B66F229EBFF84007A9C85"
-            BuildableName = "EmojiApp.app"
-            BlueprintName = "EmojiApp"
-            ReferencedContainer = "container:EmojiApp.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
