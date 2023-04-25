@@ -1,6 +1,6 @@
 //
 //  XCTestCase+MemoryLeakTracking.swift
-//  EmojiAppTests
+//  RandomEmojiFeatureTests
 //
 //  Created by Sebastian Vidrea on 21.04.2023.
 //

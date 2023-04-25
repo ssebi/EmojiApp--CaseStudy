@@ -1,6 +1,6 @@
 //
 //  RandomEmojiMapperTests.swift
-//  EmojiAppTests
+//  RandomEmojiFeatureTests
 //
 //  Created by Sebastian Vidrea on 19.04.2023.
 //
